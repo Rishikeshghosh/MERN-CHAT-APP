@@ -15,7 +15,11 @@ const PORT = process.env.PORT;
 app.use(cors());
 connectDB();
 app.use(express.json());
-/* app.use(express.static(path.resolve(__dirname, "build"))); */
+
+/* app.use(express.static(path.resolve(__dirname, "build")));
+I have build the frontend code in build folder and imported in this folder,
+you can use it as it is if you want, otherwise skip it*/
+
 app.use("/api", UserRoute);
 app.use("/api/chat", ChatRoute);
 app.use("/api/message", MessageRoute);
@@ -24,7 +28,7 @@ app.use(errorHandler);
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000", //http://localhost:300
+    origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT"],
   },
 });

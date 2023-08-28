@@ -17,7 +17,7 @@ connectDB();
 app.use(express.json());
 
 /* app.use(express.static(path.resolve(__dirname, "build")));
-I have build the frontend code in build folder and imported in this folder,
+I have built the frontend code in build folder and imported in this folder,
 you can use it as it is if you want, otherwise skip it*/
 
 app.use("/api", UserRoute);
